@@ -1,0 +1,270 @@
+/* Estilos básicos */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #1C1C1C; /* Fondo oscuro para resaltar los tonos neón */
+}
+
+#game-container {
+    text-align: center;
+    background-color: #2A2A2A;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0, 255, 255, 0.15);
+    width: auto;
+}
+
+/* Estilos para el título */
+h1 {
+    font-size: 2.5em;
+    color: #00FFC6; /* Verde azulado neón suave */
+    margin-bottom: 20px;
+}
+
+/* Ajustes de teclado */
+#keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Filas del teclado */
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+/* Teclas */
+.key {
+    background-color: #333333; /* Fondo oscuro para teclas */
+    border: 2px solid #005F5F; /* Borde neón tenue */
+    border-radius: 8px;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5em;
+    color: #00FFC6; /* Verde azulado para el texto */
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    text-align: center;
+    line-height: 60px;
+    margin: 3px;
+    box-shadow: 0 0 10px rgba(0, 255, 198, 0.3);
+}
+
+/* Hover y efecto de clic */
+.key:hover {
+    background-color: #005F5F; /* Tonalidad intermedia para hover */
+    transform: scale(1.05);
+}
+
+.key:active {
+    background-color: #004040; /* Tonalidad más oscura para active */
+    transform: scale(0.95);
+}
+
+/* Botón DELETE y ENTER */
+.delete-key, .enter-key {
+    background-color: #333333;
+    color: #00FFC6;
+}
+
+/* Contenedor especial */
+.special-container {
+    border: 2px solid #005F5F;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: #2A2A2A; /* Fondo en tono oscuro */
+}
+
+.special-row {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+}
+
+/* Estilos para los inputs de letras */
+.input-letter {
+    width: 75px;
+    height: 75px;
+    font-size: 1.8em;
+    text-align: center;
+    border: 2px solid #005F5F;
+    border-radius: 8px;
+    outline: none;
+    background-color: #333333;
+    color: #00FFC6;
+    margin: 6px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    cursor: default;
+    box-shadow: 0 0 10px rgba(0, 255, 198, 0.3);
+}
+
+/* Efecto al enfocar el input */
+.input-letter:focus {
+    border-color: #00FFC6;
+    background-color: #005F5F;
+    transform: scale(1.05);
+}
+
+/* Estilo para el contenedor de selección */
+.selection-length, .selection-language {
+    margin: 20px;
+}
+
+/* Estilos para los selectores */
+label {
+    display: block;
+    font-size: 1.2em;
+    color: #00FFC6;
+    margin-bottom: 10px;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    border: 2px solid #005F5F;
+    border-radius: 10px;
+    background-color: #333333;
+    color: #00FFC6;
+    transition: border-color 0.3s ease;
+}
+
+/* Efecto al enfocar el selector */
+select:focus {
+    border-color: #00FFC6;
+}
+
+/* Botón de inicio */
+#start-game, #help-button {
+    background-color: #333333;
+    color: #00FFC6;
+    border: 2px solid #005F5F;
+    border-radius: 10px;
+    padding: 15px 35px;
+    font-size: 1.3em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 198, 0.3);
+}
+
+/* Efecto de hover para los botones */
+#start-game:hover, #help-button:hover {
+    background-color: #005F5F;
+    transform: scale(1.05);
+}
+
+/* Efecto de clic en los botones */
+#start-game:active, #help-button:active {
+    background-color: #004040;
+    transform: scale(0.95);
+}
+
+.close {
+    color: #00FFC6;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: #004040;
+    cursor: pointer;
+}
+
+/* Contenedor de botones dentro de la modal */
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Estructura de la modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #2A2A2A;
+    margin: 3% auto;
+    padding: 20px;
+    border: 1px solid #333;
+    width: 50%;
+    max-width: auto;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.2);
+    border: 2px solid #005F5F;
+}
+
+.modal-body {
+    font-size: 1.5em;
+    color: #00FFC6;
+    margin-bottom: 20px;
+}
+
+#modal-button {
+    background-color: #333333;
+    color: #00FFC6;
+    border: 2px solid #005F5F;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 198, 0.3);
+}
+
+#modal-button:hover {
+    background-color: #005F5F;
+    transform: scale(1.05);
+}
+
+#modal-button:active {
+    background-color: #004040;
+}
+
+/* Estilo para el botón "Regresar" */
+#back-to-menu {
+    background-color: #333333;  /* Fondo oscuro */
+    color: #00FFC6;  /* Texto en verde azulado neón */
+    border: 2px solid #005F5F;  /* Borde en tono neón */
+    border-radius: 10px;  /* Bordes redondeados */
+    padding: 15px 35px;  /* Espaciado en el botón */
+    font-size: 1.3em;  /* Tamaño de fuente */
+    cursor: pointer;  /* Cambiar a cursor de mano */
+    transition: background-color 0.3s ease, transform 0.2s ease;  /* Efectos de transición */
+    box-shadow: 0 0 15px rgba(0, 255, 198, 0.3);  /* Sombra luminosa */
+    margin-top: 20px;  /* Espaciado superior */
+}
+
+/* Efecto hover para el botón "Regresar" */
+#back-to-menu:hover {
+    background-color: #005F5F;  /* Fondo más claro para hover */
+    transform: scale(1.05);  /* Efecto de escala para el hover */
+}
+
+/* Efecto active para el botón "Regresar" */
+#back-to-menu:active {
+    background-color: #004040;  /* Fondo aún más oscuro para el clic */
+    transform: scale(0.95);  /* Efecto de reducción al presionar */
+}

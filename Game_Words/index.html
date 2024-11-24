@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos de Palabras</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <h1>Juegos de Palabras</h1>
+
+        <div id="modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <div id="modal-body">
+                    <!-- El contenido dinámico se insertará aquí -->
+                </div>
+                <button id="modal-button">Cerrar</button> 
+            </div>
+        </div>
+
+        <!-- Selector de longitud de palabra -->
+        <div class="selection-length">
+            <label>Longitud de la palabra:</label>
+            <select id="word-length">
+                <option value="3">3 Letras</option>
+                <option value="4">4 Letras</option>
+                <option value="5">5 Letras</option>
+                <option value="6">6 Letras</option>
+                <option value="7">7 Letras</option>
+                <option value="8">8 Letras</option>
+                <option value="9">9 Letras</option>
+                <option value="10">10 Letras</option>
+            </select>
+        </div>
+
+        <!-- Selector de idioma -->
+        <div class="selection-language">
+            <label>Idioma:</label>
+            <!-- El select se generará dinámicamente con JavaScript -->
+        </div>
+
+        <!-- Botones para iniciar el juego y ayuda -->
+        <div class="button-container">
+            <button id="start-game">Iniciar Juego</button>
+            <button id="help-button">Ayuda</button>
+        </div>
+
+        <!-- Contenedor de juego -->
+        <div id="game-area" style="display: none;">
+            <!-- Contenedor para los inputs de letras -->
+            <div id="letter-selection-container"></div>
+            <!-- Área del teclado -->
+            <div id="keyboard"></div>
+
+            <!-- Botón para regresar -->
+            <button id="back-to-menu" style="margin-top: 20px;">Volver inicio</button>
+        </div>
+    </div>
+    <script type="module" src="js/loadLanguages.js"></script>
+    <script type="module" src="js/keyboards.js"></script>
+    <script type="module" src="js/length.js"></script>
+    <script type="module" src="js/gameController.js"></script>
+    <script type="module" src="js/modal.js"></script>
+</body>
+</html>
